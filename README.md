@@ -20,3 +20,50 @@ Without cumbersome task-specific training, RSVG-ZeroOV offers an efficient and s
 <div align="center">
   <img src="https://github.com/like413/RSVG-ZeorOV/blob/main/assets/total.jpg?raw=true" width="100%" height="100%"/>
 </div><br/>
+
+## 🌟 Installation
+
+### Requirements
+
+- Python 3.8.20
+- Numpy
+- Pytorch 2.1.0
+
+1. Install the packages in `requirements.txt` via `pip`:
+```shell
+pip install -r requirements.txt
+```
+2. Please set up the Qwen model and its runtime environment following the official Qwen documentation:https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct
+
+3. Please configure the SAM model and its runtime environment following the official SAM documentation:https://github.com/facebookresearch/segment-anything, and put SAM pretrained model https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth into ./sam_checkpoint
+
+## 🌈 Datasets
+
+1. Please download the corresponding dataset from the official link.
+   RRSIS-D:https://github.com/Lsan2401/RMSIN   RISBench:https://github.com/HIT-SIRS/CroBIM
+
+## 🔥 Inference
+
+This project consists of three core modules for extracting cross-modal attention, modeling structural information, and refining predictions through attention fusion. The key components are as follows:
+1. This module extracts cross-attention maps from the Vision-Language Model (VLM), enabling an initial localization of the referred object.
+    ```
+        bash llmattn.sh
+    ```
+2. This module obtains self-attention maps from the Diffusion Model (DM) to capture the structural features of the referred object.
+    ```
+        bash generate_diffusion.sh
+    ```
+3. This module fuses the cross- and self-attention maps and utilizes the Segment Anything Model (SAM) for refinement to produce more accurate segmentation results.
+    ```
+        python rs_evolve.py
+    ```
+    
+```bibtex
+@article{li2025rsvg,
+  title={RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images},
+  author={Li, Ke and Wang, Di and Wang, Ting and Dong, Fuyu and Zhang, Yiming and Zhang, Luyao and Wang, Xiangyu and Li, Shaofeng and Wang, Quan},
+  journal={arXiv preprint arXiv:2509.18711},
+  year={2025}
+}
+}
+```    
