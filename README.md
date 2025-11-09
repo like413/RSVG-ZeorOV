@@ -8,7 +8,7 @@ This repository is the official implementation:
 > Ke Li, Di Wang, Ting Wang, Fuyu Dong, Yiming Zhang, Luyao Zhang, Xiangyu Wang, Shaofeng Li, Quan Wang
 
 ## 📢 Update
-- **(2025/11/8)** The benchmark method [RSVG-ZeorOV](https://github.com/like413/RSVG-ZeorOV/edit/main) is released.
+- **(2025/11/8)** The benchmark method [RSVG-ZeorOV](https://github.com/like413/RSVG-ZeorOV/tree/main) is released.
 
 ## Abstract
 Remote sensing visual grounding (RSVG) aims to localize objects in remote sensing images based on free-form natural language expressions. Existing approaches are typically constrained to closed-set vocabularies, limiting their applicability in open-world scenarios. While recent attempts to leverage generic foundation models for open-vocabulary RSVG, they overly rely on expensive high-quality datasets and time-consuming fine-tuning. To address these limitations, we propose RSVG-ZeroOV, a training-free framework that aims to explore the potential of frozen generic foundation models for zero-shot open-vocabulary RSVG. Specifically, RSVG-ZeroOV comprises three key stages:
@@ -57,6 +57,7 @@ This project consists of three core modules for extracting cross-modal attention
     ```
         python rs_evolve.py
     ```
+
     
 ```bibtex
 @article{li2025rsvg,
@@ -64,6 +65,5 @@ This project consists of three core modules for extracting cross-modal attention
   author={Li, Ke and Wang, Di and Wang, Ting and Dong, Fuyu and Zhang, Yiming and Zhang, Luyao and Wang, Xiangyu and Li, Shaofeng and Wang, Quan},
   journal={arXiv preprint arXiv:2509.18711},
   year={2025}
-}
 }
 ```    
