@@ -18,5 +18,5 @@ Remote sensing visual grounding (RSVG) aims to localize objects in remote sensin
 Without cumbersome task-specific training, RSVG-ZeroOV offers an efficient and scalable solution. Extensive experiments demonstrate that the proposed framework consistently outperforms existing weakly-supervised and zero-shot methods.
 
 <div align="center">
-  <img src="https://github.com/like413/VisTA/blob/main/fig/1.png?raw=true" width="100%" height="100%"/>
+  <img src="https://github.com/like413/RSVG-ZeorOV/blob/main/assets/total.jpg?raw=true" width="100%" height="100%"/>
 </div><br/>
