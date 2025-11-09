@@ -1,0 +1,4 @@
+transformers
+scikit-learn
+diffusers==0.9.0
+pillow

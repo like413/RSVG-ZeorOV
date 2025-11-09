@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=2,3 python -m torch.distributed.launch  --master_port 55321 --nproc_per_node 2 --nnodes 1 generate_png.py
