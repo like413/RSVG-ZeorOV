@@ -1,28 +1,25 @@
-# RSVG-ZeorOV
-[AAAI 2026] RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images.
-
-**[📄 [arXiv]](https://arxiv.org/abs/2509.18711)**  &emsp; 
+# RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images
 
 This repository is the official implementation:
 > [RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images](https://arxiv.org/abs/2509.18711)  
 > Ke Li, Di Wang, Ting Wang, Fuyu Dong, Yiming Zhang, Luyao Zhang, Xiangyu Wang, Shaofeng Li, Quan Wang
 
 ## 📢 Update
-- **(2025/11/8)** The benchmark method [RSVG-ZeorOV](https://github.com/like413/RSVG-ZeorOV/tree/main) is released.
+- **(2025/11/9)** The benchmark method [RSVG-ZeroOV](https://github.com/like413/RSVG-ZeorOV) is released.
 
 ## Abstract
 Remote sensing visual grounding (RSVG) aims to localize objects in remote sensing images based on free-form natural language expressions. Existing approaches are typically constrained to closed-set vocabularies, limiting their applicability in open-world scenarios. While recent attempts to leverage generic foundation models for open-vocabulary RSVG, they overly rely on expensive high-quality datasets and time-consuming fine-tuning. To address these limitations, we propose RSVG-ZeroOV, a training-free framework that aims to explore the potential of frozen generic foundation models for zero-shot open-vocabulary RSVG. Specifically, RSVG-ZeroOV comprises three key stages:
-(i) Overview: We utilize a vision-language model (VLM) to obtain cross-attention maps that capture semantic correlations between text queries and visual regions.
-(ii) Focus: By leveraging the fine-grained modeling priors of a diffusion model (DM), we fill in gaps in structural and shape information of objects, which are often overlooked by VLM.
-(iii) Evolve: A simple yet effective attention evolution module is introduced to suppress irrelevant activations, yielding purified segmentation masks over the referred objects.
+*(i) Overview:* We utilize a vision-language model (VLM) to obtain cross-attention maps that capture semantic correlations between text queries and visual regions.
+*(ii) Focus:* By leveraging the fine-grained modeling priors of a diffusion model (DM), we fill in gaps in structural and shape information of objects that are often overlooked by VLMs.
+*(iii) Evolve:* A simple yet effective attention evolution module is introduced to suppress irrelevant activations, yielding purified segmentation masks over the referred objects.
 Without cumbersome task-specific training, RSVG-ZeroOV offers an efficient and scalable solution. Extensive experiments demonstrate that the proposed framework consistently outperforms existing weakly-supervised and zero-shot methods.
 
 <div align="center">
-  <img src="https://github.com/like413/RSVG-ZeorOV/blob/main/assets/total.jpg?raw=true" width="100%" height="100%"/>
+  <img src="https://github.com/like413/RSVG-ZeorOV/blob/main/assets/framework.png?raw=true" width="100%" height="100%"/>
+  The framework of the proposed RSVG-ZeroOV.
 </div><br/>
 
-## 🌟 Installation
-
+## 🛠️ Environment
 ### Requirements
 
 - Python 3.8.20
@@ -33,16 +30,16 @@ Without cumbersome task-specific training, RSVG-ZeroOV offers an efficient and s
 ```shell
 pip install -r requirements.txt
 ```
-2. Please set up the Qwen model and its runtime environment following the official Qwen documentation:https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct
+2. Please set up the Qwen model and its runtime environment following the official Qwen documentation https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct
 
-3. Please configure the SAM model and its runtime environment following the official SAM documentation:https://github.com/facebookresearch/segment-anything, and put SAM pretrained model https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth into ./sam_checkpoint
+3. Please configure the SAM model and its runtime environment following the official SAM documentation https://github.com/facebookresearch/segment-anything, and put SAM pretrained model https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth into ./sam_checkpoint
 
-## 🌈 Datasets
+## 💾 Datasets
+Please download the corresponding dataset from the official link.
+- RRSIS-D:https://github.com/Lsan2401/RMSIN   
+- RISBench:https://github.com/HIT-SIRS/CroBIM
 
-1. Please download the corresponding dataset from the official link.
-   RRSIS-D:https://github.com/Lsan2401/RMSIN   RISBench:https://github.com/HIT-SIRS/CroBIM
-
-## 🔥 Inference
+## 🌟 Inference
 
 This project consists of three core modules for extracting cross-modal attention, modeling structural information, and refining predictions through attention fusion. The key components are as follows:
 1. This module extracts cross-attention maps from the Vision-Language Model (VLM), enabling an initial localization of the referred object.
@@ -58,7 +55,12 @@ This project consists of three core modules for extracting cross-modal attention
         python rs_evolve.py
     ```
 
-    
+## 🙏 Acknowledgement
+The code is based on [DiffPNG](https://github.com/nini0919/DiffPNG). We thank the authors for their open-sourced code and encourage users to cite their works when applicable.
+
+
+## 🚀 Citation
+If you use our data or code in your research or find it is helpful, please cite this project.
 ```bibtex
 @article{li2025rsvg,
   title={RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images},
@@ -66,4 +68,8 @@ This project consists of three core modules for extracting cross-modal attention
   journal={arXiv preprint arXiv:2509.18711},
   year={2025}
 }
-```    
+```
+
+## License
+Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only.
+Any commercial use should get formal permission first.
