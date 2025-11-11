@@ -69,7 +69,3 @@ If you use our data or code in your research or find it is helpful, please cite 
   year={2025}
 }
 ```
-
-## License
-Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only.
-Any commercial use should get formal permission first.
